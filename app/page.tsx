@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Question } from './types';
+import { Question } from '@/app/types';
 import ProgressBar from './components/ProgressBar';
 import QuizQuestion from './components/QuizQuestion';
 import QuizResult from './components/QuizResult';
