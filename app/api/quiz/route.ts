@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { Question } from '../../types';
+import { Question } from '@/app/types';
 
 const questions: Question[] = [
   // 5 Multiple Choice
