@@ -1,0 +1,38 @@
+{
+  "id": 2,
+  "title": "Translation Practice",
+  "description": "Spanish to English translation exercises",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Me gusta conocer gente nueva.'",
+      "answer": "I like to meet new people"
+    },
+    {
+      "id": 7,
+      "type": "translation",
+      "question": "Traduce: '¿Tienes un apodo?'",
+      "answer": "Do you have a nickname?"
+    },
+    {
+      "id": 8,
+      "type": "translation",
+      "question": "Traduce: 'No soy un fan de los deportes.'",
+      "answer": "I'm not a sports fan"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: '¿Cómo llegas al trabajo?'",
+      "answer": "How do you get to work?"
+    },
+    {
+      "id": 10,
+      "type": "translation",
+      "question": "Traduce: 'Suelo dormir hasta tarde los fines de semana.'",
+      "answer": "I usually sleep late on the weekends"
+    }
+  ]
+}

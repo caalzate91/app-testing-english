@@ -1,0 +1,38 @@
+{
+  "id": 3,
+  "title": "True or False & Fill in the Blanks",
+  "description": "Mixed exercises with true/false and completion questions",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 11,
+      "type": "true-false",
+      "question": "True or False: 'Chilly' means the weather is very hot.",
+      "answer": false
+    },
+    {
+      "id": 12,
+      "type": "true-false",
+      "question": "True or False: If you are 'allergic to' cats, you can have one as a pet without problems.",
+      "answer": false
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "I don't have ______ to do, I'm free all day.",
+      "answer": "anything"
+    },
+    {
+      "id": 14,
+      "type": "fill-in-the-blank",
+      "question": "She is a very ______ person, she loves to talk.",
+      "answer": "talkative"
+    },
+    {
+      "id": 15,
+      "type": "fill-in-the-blank",
+      "question": "A: 'I'm broke.' B: 'I am ______.'",
+      "answer": "too"
+    }
+  ]
+}

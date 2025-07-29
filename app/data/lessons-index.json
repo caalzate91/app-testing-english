@@ -1,0 +1,13 @@
+{
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Making Friends",
+      "description": "Basic conversation starters and introductions",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["conversation", "introductions", "social"]
+    }
+  ]
+}

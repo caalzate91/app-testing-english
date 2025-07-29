@@ -1,0 +1,126 @@
+{
+  "id": 1,
+  "title": "Getting to Know People",
+  "description": "Basic conversation starters and introductions",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "Which of these is a place you might go on the weekend?",
+      "options": ["Salary", "Club", "Listener", "Health"],
+      "answer": "Club",
+      "synonyms": ["Nightclub", "Bar"]
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "question": "A person who loves cats and dogs is an ______.",
+      "options": ["Animal lover", "Football fan", "Talker", "Stranger"],
+      "answer": "Animal lover"
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "question": "What do you call a person you don't know?",
+      "options": ["Pet", "Stranger", "Friend", "Talker"],
+      "answer": "Stranger",
+      "synonyms": ["Unknown person", "Newcomer"]
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "Which is an activity you do in your free time?",
+      "options": ["Salary", "Software company", "Play sports", "Full-time student"],
+      "answer": "Play sports",
+      "synonyms": ["Engage in athletics", "Do physical activities"]
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "question": "'By the way, ...' is an expression used to:",
+      "options": ["End a conversation", "Introduce a new topic", "Disagree", "Say hello"],
+      "answer": "Introduce a new topic"
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "question": "When you meet someone new, you might ask about their:",
+      "options": ["Salary", "Job", "Health problems", "Personal secrets"],
+      "answer": "Job",
+      "synonyms": ["Work", "Profession", "Career"]
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "A good conversation starter is:",
+      "options": ["How much money do you make?", "Nice weather today, isn't it?", "You look terrible", "I don't like you"],
+      "answer": "Nice weather today, isn't it?",
+      "synonyms": ["Lovely day", "Beautiful weather"]
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "question": "When someone says 'How are you?', a common response is:",
+      "options": ["I'm fine, thank you", "I hate you", "Go away", "Mind your business"],
+      "answer": "I'm fine, thank you",
+      "synonyms": ["I'm good", "I'm well", "Fine thanks"]
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "question": "To ask someone's name politely, you say:",
+      "options": ["Who are you?", "What's your name?", "Tell me your name now", "I don't care about your name"],
+      "answer": "What's your name?",
+      "synonyms": ["May I know your name?", "Could you tell me your name?"]
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "question": "When leaving a conversation, you might say:",
+      "options": ["Get lost", "Nice talking to you", "You're boring", "I hate this"],
+      "answer": "Nice talking to you",
+      "synonyms": ["It was great meeting you", "See you later"]
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "A person who studies at university is called a:",
+      "options": ["Worker", "Student", "Teacher", "Boss"],
+      "answer": "Student",
+      "synonyms": ["University student", "College student"]
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "question": "When you want to know where someone is from, you ask:",
+      "options": ["Where do you live?", "Where are you from?", "What's your address?", "Show me your passport"],
+      "answer": "Where are you from?",
+      "synonyms": ["What's your nationality?", "Where do you come from?"]
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "question": "A person who talks a lot is called a:",
+      "options": ["Listener", "Talker", "Stranger", "Pet"],
+      "answer": "Talker",
+      "synonyms": ["Chatterbox", "Talkative person"]
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "When you agree with someone, you can say:",
+      "options": ["No way", "I disagree", "That's right", "You're wrong"],
+      "answer": "That's right",
+      "synonyms": ["Exactly", "I agree", "Absolutely"]
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "question": "A polite way to interrupt someone is:",
+      "options": ["Shut up", "Stop talking", "Excuse me", "Be quiet"],
+      "answer": "Excuse me",
+      "synonyms": ["Sorry to interrupt", "Pardon me"]
+    }
+  ]
+}

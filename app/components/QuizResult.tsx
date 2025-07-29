@@ -11,31 +11,31 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
   const getResultTheme = () => {
     if (percentage >= 80) {
       return {
-        bgClass: 'bg-success-50 dark:bg-success-900/20',
-        borderClass: 'border-success-200 dark:border-success-800',
-        textClass: 'text-success-800 dark:text-success-200',
-        iconBgClass: 'bg-success-500',
-        badgeClass: 'bg-success-100 text-success-800 dark:bg-success-900/50 dark:text-success-200',
+        bgClass: 'bg-success-100 dark:bg-success-900/30',
+        borderClass: 'border-success-300 dark:border-success-700',
+        textClass: 'text-success-900 dark:text-success-100',
+        iconBgClass: 'bg-success-600',
+        badgeClass: 'bg-success-200 text-success-900 dark:bg-success-800 dark:text-success-100 border-2 border-success-400 dark:border-success-600',
         message: '¡Excelente trabajo!',
         icon: '🎉',
       };
     } else if (percentage >= 60) {
       return {
-        bgClass: 'bg-warning-50 dark:bg-warning-900/20',
-        borderClass: 'border-warning-200 dark:border-warning-800',
-        textClass: 'text-warning-800 dark:text-warning-200',
-        iconBgClass: 'bg-warning-500',
-        badgeClass: 'bg-warning-100 text-warning-800 dark:bg-warning-900/50 dark:text-warning-200',
+        bgClass: 'bg-warning-100 dark:bg-warning-900/30',
+        borderClass: 'border-warning-300 dark:border-warning-700',
+        textClass: 'text-warning-900 dark:text-warning-100',
+        iconBgClass: 'bg-warning-600',
+        badgeClass: 'bg-warning-200 text-warning-900 dark:bg-warning-800 dark:text-warning-100 border-2 border-warning-400 dark:border-warning-600',
         message: '¡Buen intento!',
         icon: '👍',
       };
     } else {
       return {
-        bgClass: 'bg-danger-50 dark:bg-danger-900/20',
-        borderClass: 'border-danger-200 dark:border-danger-800',
-        textClass: 'text-danger-800 dark:text-danger-200',
-        iconBgClass: 'bg-danger-500',
-        badgeClass: 'bg-danger-100 text-danger-800 dark:bg-danger-900/50 dark:text-danger-200',
+        bgClass: 'bg-danger-100 dark:bg-danger-900/30',
+        borderClass: 'border-danger-300 dark:border-danger-700',
+        textClass: 'text-danger-900 dark:text-danger-100',
+        iconBgClass: 'bg-danger-600',
+        badgeClass: 'bg-danger-200 text-danger-900 dark:bg-danger-800 dark:text-danger-100 border-2 border-danger-400 dark:border-danger-600',
         message: 'Sigue practicando',
         icon: '💪',
       };
@@ -44,11 +44,11 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
 
   const getProgressBarClass = () => {
     if (percentage >= 80) {
-      return 'bg-gradient-to-r from-success-500 to-success-400';
+      return 'bg-gradient-to-r from-success-600 to-success-500';
     } else if (percentage >= 60) {
-      return 'bg-gradient-to-r from-warning-500 to-warning-400';
+      return 'bg-gradient-to-r from-warning-600 to-warning-500';
     } else {
-      return 'bg-gradient-to-r from-danger-500 to-danger-400';
+      return 'bg-gradient-to-r from-danger-600 to-danger-500';
     }
   };
 
@@ -58,14 +58,14 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
     <div className="animate-fade-in space-y-6">
       {/* Header with icon and message */}
       <div className="text-center space-y-4">
-        <div className={`inline-flex items-center justify-center w-20 h-20 ${theme.iconBgClass} rounded-full text-3xl`}>
+        <div className={`inline-flex items-center justify-center w-20 h-20 ${theme.iconBgClass} rounded-full text-3xl border-4 border-white dark:border-slate-800 shadow-lg`}>
           {theme.icon}
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-2">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
             ¡Cuestionario Completado!
           </h2>
-          <p className={`text-xl font-semibold ${theme.textClass}`}>
+          <p className={`text-xl font-bold ${theme.textClass}`}>
             {theme.message}
           </p>
         </div>
@@ -79,14 +79,14 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
             {percentage}%
           </div>
           <div className="space-y-2">
-            <p className="text-lg text-slate-700 dark:text-slate-300">
-              <span className="font-semibold text-slate-800 dark:text-slate-200">
+            <p className="text-lg text-slate-800 dark:text-slate-200">
+              <span className="font-bold text-slate-900 dark:text-slate-100">
                 {correctAnswers} de {totalQuestions}
               </span>{' '}
               respuestas correctas
             </p>
-            <p className="text-slate-600 dark:text-slate-400">
-              Respuestas incorrectas: <span className="font-semibold">{totalQuestions - correctAnswers}</span>
+            <p className="text-slate-700 dark:text-slate-300">
+              Respuestas incorrectas: <span className="font-bold">{totalQuestions - correctAnswers}</span>
             </p>
           </div>
         </div>
@@ -115,11 +115,11 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
 
         {/* Progress visualization */}
         <div className="space-y-2">
-          <div className="flex justify-between text-sm font-medium text-slate-600 dark:text-slate-400">
+          <div className="flex justify-between text-sm font-semibold text-slate-700 dark:text-slate-300">
             <span>Tu puntuación</span>
             <span>{correctAnswers}/{totalQuestions}</span>
           </div>
-          <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+          <div className="h-4 bg-slate-300 dark:bg-slate-600 rounded-full overflow-hidden border-2 border-slate-400 dark:border-slate-500">
             <div 
               className={`h-full rounded-full transition-all duration-1000 ease-out ${getProgressBarClass()}`}
               style={{ width: `${percentage}%` }}
@@ -132,13 +132,13 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <button
           onClick={onRestart}
-          className="flex-1 sm:flex-none bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-lg hover:shadow-xl active:shadow-md focus:outline-none focus:ring-4 focus:ring-primary-200"
+          className="flex-1 sm:flex-none bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-xl hover:shadow-2xl active:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-200 border-2 border-primary-700"
         >
           🔄 Intentar de nuevo
         </button>
         <button
           onClick={() => window.location.href = '/'}
-          className="flex-1 sm:flex-none bg-white border-2 border-primary-500 text-primary-500 hover:bg-primary-50 font-semibold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-lg hover:shadow-xl active:shadow-md focus:outline-none focus:ring-4 focus:ring-primary-200"
+          className="flex-1 sm:flex-none bg-white border-3 border-primary-600 text-primary-700 hover:bg-primary-100 font-bold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-xl hover:shadow-2xl active:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-200"
         >
           🏠 Inicio
         </button>

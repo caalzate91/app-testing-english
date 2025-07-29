@@ -33,6 +33,24 @@ export interface QuizStatistics {
   readonly timeSpent?: number;
 }
 
+export interface Lesson {
+  readonly id: number;
+  readonly title: string;
+  readonly description: string;
+  readonly level: string;
+  readonly questions: readonly Question[];
+}
+
+export interface LessonMetadata {
+  readonly id: number;
+  readonly title: string;
+  readonly description: string;
+  readonly level: string;
+  readonly questionsCount: number;
+  readonly difficulty: 'beginner' | 'intermediate' | 'advanced';
+  readonly tags: readonly string[];
+}
+
 export type QuestionType = Question['type'];
 
 export type AnswerValidationResult = {
