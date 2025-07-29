@@ -2,97 +2,74 @@
 
 import { useState, useEffect } from 'react';
 import { Question } from '@/app/types';
+import { useQuiz } from '@/app/hooks/useQuiz';
 import ProgressBar from './components/ProgressBar';
 import QuizQuestion from './components/QuizQuestion';
 import QuizResult from './components/QuizResult';
 import Feedback from './components/Feedback';
 
-export default function Home() {
-  const [questions, setQuestions] = useState<Question[]>([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [userAnswer, setUserAnswer] = useState('');
-  const [feedback, setFeedback] = useState<string | null>(null);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [showSummary, setShowSummary] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [isCorrect, setIsCorrect] = useState(false);
+export default function Home(): React.ReactElement {
+  const [questionsData, setQuestionsData] = useState<readonly Question[]>([]);
+  const [isLoadingQuestions, setIsLoadingQuestions] = useState(true);
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
+  // Fetch questions from API
   useEffect(() => {
-    const fetchQuestions = async () => {
+    const fetchQuestions = async (): Promise<void> => {
       try {
-        setIsLoading(true);
+        setIsLoadingQuestions(true);
         const response = await fetch('/api/quiz');
         if (!response.ok) {
-          throw new Error('Failed to fetch questions');
+          throw new Error(`Failed to fetch questions: ${response.status}`);
         }
-        const data: Question[] = await response.json();
-        setQuestions(data);
-        setError(null);
-      } catch (error) {
-        console.error(error);
-        setError('Error al cargar las preguntas. Por favor, intenta recargar la página.');
+        const data = (await response.json()) as Question[];
+        setQuestionsData(data);
+        setFetchError(null);
+      } catch (err) {
+        const errorMessage = err instanceof Error 
+          ? err.message 
+          : 'Error desconocido al cargar las preguntas';
+        console.error('Error fetching questions:', err);
+        setFetchError(`${errorMessage}. Por favor, intenta recargar la página.`);
       } finally {
-        setIsLoading(false);
+        setIsLoadingQuestions(false);
       }
     };
+    
     fetchQuestions();
   }, []);
 
-  const handleAnswerSubmit = () => {
-    if (!userAnswer.trim()) {
-      return;
-    }
+  // Initialize quiz hook
+  const quiz = useQuiz({
+    questions: questionsData,
+    onQuizComplete: (score, total) => {
+      // Quiz completed successfully
+      console.warn(`Quiz completado: ${score}/${total}`);
+    },
+  });
 
-    const currentQuestion = questions[currentQuestionIndex];
-    let answerIsCorrect = false;
-
-    if (currentQuestion.type === 'true-false') {
-      answerIsCorrect = (userAnswer.toLowerCase() === String(currentQuestion.answer));
-    } else {
-      answerIsCorrect = userAnswer.trim().toLowerCase() === String(currentQuestion.answer).toLowerCase();
-    }
-
-    setIsCorrect(answerIsCorrect);
-
-    if (answerIsCorrect) {
-      setCorrectAnswers(prev => prev + 1);
-      let correctFeedback = "¡Correcto! 🎉";
-      if (currentQuestion.synonyms) {
-        correctFeedback += ` Sinónimos: ${currentQuestion.synonyms.join(', ')}.`;
-      }
-      setFeedback(correctFeedback);
-    } else {
-      setFeedback(`Incorrecto. La respuesta correcta es: ${currentQuestion.answer}`);
-    }
-
-    // Show feedback for 3 seconds, then move to next question
+  // Handle next question logic
+  const handleNextQuestion = (): void => {
     setTimeout(() => {
-      setFeedback(null);
-      setUserAnswer('');
-      if (currentQuestionIndex < questions.length - 1) {
-        setCurrentQuestionIndex(prev => prev + 1);
-      } else {
-        setShowSummary(true);
-      }
+      quiz.actions.nextQuestion();
     }, 3000);
   };
 
-  const handleRestart = () => {
-    setCurrentQuestionIndex(0);
-    setUserAnswer('');
-    setFeedback(null);
-    setCorrectAnswers(0);
-    setShowSummary(false);
-    setIsCorrect(false);
-    // Refetch questions to get a new shuffle
+  // Handle answer submission with feedback delay
+  const handleAnswerSubmit = (): void => {
+    quiz.actions.submitAnswer();
+    handleNextQuestion();
+  };
+
+  // Handle quiz restart
+  const handleRestart = (): void => {
+    quiz.actions.resetQuiz();
+    // Optionally refetch questions for a new shuffle
     window.location.reload();
   };
 
-  const isAnswerValid = userAnswer.trim().length > 0;
-
   // Loading state
-  if (isLoading) {
+  if (isLoadingQuestions) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8">
         <div className="w-full max-w-2xl text-center space-y-6">
@@ -110,7 +87,7 @@ export default function Home() {
   }
 
   // Error state
-  if (error) {
+  if (fetchError) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8">
         <div className="w-full max-w-2xl bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 text-center space-y-6">
@@ -121,13 +98,38 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
               Error al cargar
             </h1>
-            <p className="text-slate-600 dark:text-slate-400">{error}</p>
+            <p className="text-slate-600 dark:text-slate-400">{fetchError}</p>
           </div>
           <button
             onClick={() => window.location.reload()}
             className="bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200"
           >
             🔄 Reintentar
+          </button>
+        </div>
+      </main>
+    );
+  }
+
+  // Quiz error state
+  if (quiz.error) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8">
+        <div className="w-full max-w-2xl bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 text-center space-y-6">
+          <div className="w-16 h-16 bg-danger-500 rounded-full flex items-center justify-center mx-auto">
+            <span className="text-2xl text-white">❌</span>
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
+              Error en el quiz
+            </h1>
+            <p className="text-slate-600 dark:text-slate-400">{quiz.error}</p>
+          </div>
+          <button
+            onClick={quiz.actions.resetQuiz}
+            className="bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200"
+          >
+            🔄 Reiniciar Quiz
           </button>
         </div>
       </main>
@@ -149,38 +151,38 @@ export default function Home() {
 
         {/* Main Content */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95 p-6 sm:p-8 lg:p-12">
-          {showSummary ? (
+          {quiz.state.isCompleted ? (
             <QuizResult
-              correctAnswers={correctAnswers}
-              totalQuestions={questions.length}
+              correctAnswers={quiz.state.score}
+              totalQuestions={quiz.state.questions.length}
               onRestart={handleRestart}
             />
           ) : (
             <div className="space-y-8">
               {/* Progress Bar */}
               <ProgressBar
-                current={currentQuestionIndex + 1}
-                total={questions.length}
+                current={quiz.state.currentQuestionIndex + 1}
+                total={quiz.state.questions.length}
                 className="mb-8"
               />
 
               {/* Current Question */}
-              {questions.length > 0 && (
+              {quiz.currentQuestion && (
                 <QuizQuestion
-                  question={questions[currentQuestionIndex]}
-                  userAnswer={userAnswer}
-                  onAnswerChange={setUserAnswer}
+                  question={quiz.currentQuestion}
+                  userAnswer={quiz.state.userAnswer}
+                  onAnswerChange={quiz.actions.setUserAnswer}
                   onSubmit={handleAnswerSubmit}
-                  isAnswerValid={isAnswerValid}
-                  feedback={feedback}
+                  isAnswerValid={quiz.isAnswerValid}
+                  feedback={quiz.state.feedback}
                 />
               )}
 
               {/* Feedback */}
-              {feedback && (
+              {quiz.state.feedback && (
                 <Feedback
-                  message={feedback}
-                  isCorrect={isCorrect}
+                  message={quiz.state.feedback}
+                  isCorrect={quiz.state.isCorrect}
                   className="mt-6"
                 />
               )}
