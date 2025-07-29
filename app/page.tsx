@@ -44,7 +44,7 @@ export default function Home(): React.ReactElement {
     questions: questionsData,
     onQuizComplete: (score, total) => {
       // Quiz completed successfully
-      console.warn(`Quiz completado: ${score}/${total}`);
+      console.info(`Quiz completado: ${score}/${total}`);
     },
   });
 
