@@ -62,8 +62,8 @@ export default function QuizQuestion({
                 onClick={() => onAnswerChange(option)}
                 className={`quiz-option p-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary-200 cursor-pointer select-none ${
                   userAnswer === option
-                    ? 'bg-primary-600 border-primary-700 text-white shadow-xl ring-2 ring-primary-300'
-                    : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-primary-400 hover:bg-primary-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
+                    ? 'bg-slate-800 border-slate-900 text-white shadow-xl ring-2 ring-slate-600'
+                    : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
                 }`}
                 aria-pressed={userAnswer === option}
               >
@@ -99,8 +99,8 @@ export default function QuizQuestion({
               onClick={() => onAnswerChange('true')}
               className={`quiz-option px-8 py-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-success-200 cursor-pointer select-none ${
                 userAnswer === 'true'
-                  ? 'bg-success-600 border-success-700 text-white shadow-xl ring-2 ring-success-300'
-                  : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-success-400 hover:bg-success-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
+                  ? 'bg-slate-800 border-slate-900 text-white shadow-xl ring-2 ring-slate-600'
+                  : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
               }`}
               aria-pressed={userAnswer === 'true'}
             >
@@ -111,8 +111,8 @@ export default function QuizQuestion({
               onClick={() => onAnswerChange('false')}
               className={`quiz-option px-8 py-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-danger-200 cursor-pointer select-none ${
                 userAnswer === 'false'
-                  ? 'bg-danger-600 border-danger-700 text-white shadow-xl ring-2 ring-danger-300'
-                  : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-danger-400 hover:bg-danger-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
+                  ? 'bg-slate-800 border-slate-900 text-white shadow-xl ring-2 ring-slate-600'
+                  : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
               }`}
               aria-pressed={userAnswer === 'false'}
             >
@@ -148,7 +148,7 @@ export default function QuizQuestion({
     <div className={`space-y-8 ${className}`}>
       {/* Question */}
       <div className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 text-balance leading-tight">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-600 dark:text-gray-400 text-balance leading-tight">
           {question.question}
         </h2>
         
@@ -172,7 +172,7 @@ export default function QuizQuestion({
             disabled={!isAnswerValid || feedback !== null}
             className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 ${
               isAnswerValid && feedback === null
-                ? 'bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white shadow-xl hover:shadow-2xl active:shadow-lg focus:ring-primary-200 border-2 border-primary-700'
+                ? 'bg-slate-800 hover:bg-slate-900 active:bg-black text-white shadow-xl hover:shadow-2xl active:shadow-lg focus:ring-slate-300 border-2 border-slate-900'
                 : 'bg-slate-400 dark:bg-slate-600 text-slate-600 dark:text-slate-400 cursor-not-allowed shadow-none border-2 border-slate-500 dark:border-slate-500'
             }`}
             aria-label={isAnswerValid ? 'Enviar respuesta' : 'Respuesta requerida para continuar'}

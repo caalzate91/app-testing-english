@@ -11,10 +11,10 @@ export default function ProgressBar({ current, total, className = '' }: Progress
   return (
     <div className={`space-y-2 ${className}`}>
       <div className="flex justify-between items-center text-sm font-semibold">
-        <span className="text-slate-700 dark:text-slate-300">
+        <span className="text-gray-700 dark:text-slate-300">
           Pregunta {current} de {total}
         </span>
-        <span className="text-primary-700 dark:text-primary-300 bg-primary-100 dark:bg-primary-900/50 px-2 py-1 rounded-full">
+        <span className="text-slate-800 dark:text-primary-300 bg-slate-100 dark:bg-primary-900/50 px-2 py-1 rounded-full border border-slate-300 dark:border-primary-700">
           {percentage}%
         </span>
       </div>

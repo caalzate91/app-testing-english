@@ -62,7 +62,7 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
           {theme.icon}
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+          <h2 className="text-3xl font-bold text-gray-700 dark:text-slate-100 mb-2">
             ¡Cuestionario Completado!
           </h2>
           <p className={`text-xl font-bold ${theme.textClass}`}>
@@ -79,13 +79,13 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
             {percentage}%
           </div>
           <div className="space-y-2">
-            <p className="text-lg text-slate-800 dark:text-slate-200">
-              <span className="font-bold text-slate-900 dark:text-slate-100">
+            <p className="text-lg text-gray-700 dark:text-slate-200">
+              <span className="font-bold text-gray-800 dark:text-slate-100">
                 {correctAnswers} de {totalQuestions}
               </span>{' '}
               respuestas correctas
             </p>
-            <p className="text-slate-700 dark:text-slate-300">
+            <p className="text-gray-600 dark:text-slate-300">
               Respuestas incorrectas: <span className="font-bold">{totalQuestions - correctAnswers}</span>
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
 
         {/* Progress visualization */}
         <div className="space-y-2">
-          <div className="flex justify-between text-sm font-semibold text-slate-700 dark:text-slate-300">
+          <div className="flex justify-between text-sm font-semibold text-gray-700 dark:text-slate-300">
             <span>Tu puntuación</span>
             <span>{correctAnswers}/{totalQuestions}</span>
           </div>
@@ -132,13 +132,13 @@ export default function QuizResult({ correctAnswers, totalQuestions, onRestart }
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <button
           onClick={onRestart}
-          className="flex-1 sm:flex-none bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-xl hover:shadow-2xl active:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-200 border-2 border-primary-700"
+          className="flex-1 sm:flex-none bg-slate-800 hover:bg-slate-900 active:bg-black text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-xl hover:shadow-2xl active:shadow-lg focus:outline-none focus:ring-4 focus:ring-slate-300 border-2 border-slate-900"
         >
           🔄 Intentar de nuevo
         </button>
         <button
           onClick={() => window.location.href = '/'}
-          className="flex-1 sm:flex-none bg-white border-3 border-primary-600 text-primary-700 hover:bg-primary-100 font-bold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-xl hover:shadow-2xl active:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-200"
+          className="flex-1 sm:flex-none bg-white border-3 border-slate-800 text-slate-800 hover:bg-slate-100 font-bold py-4 px-8 rounded-xl transition-all duration-200 ease-in-out shadow-xl hover:shadow-2xl active:shadow-lg focus:outline-none focus:ring-4 focus:ring-slate-200"
         >
           🏠 Inicio
         </button>
