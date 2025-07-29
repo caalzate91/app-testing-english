@@ -261,16 +261,16 @@ describe('useQuiz Hook', () => {
 
       // Answer all questions
       act(() => {
-        result.current.actions.setUserAnswer('Paris');
-        result.current.actions.submitAnswer();
+        // First question
+        result.current.actions.submitAnswer('Paris');
         result.current.actions.nextQuestion();
         
-        result.current.actions.setUserAnswer('false');
-        result.current.actions.submitAnswer();
+        // Second question
+        result.current.actions.submitAnswer('false');
         result.current.actions.nextQuestion();
         
-        result.current.actions.setUserAnswer('is');
-        result.current.actions.submitAnswer();
+        // Third question (last)
+        result.current.actions.submitAnswer('is');
         result.current.actions.nextQuestion(); // This should complete the quiz
       });
 

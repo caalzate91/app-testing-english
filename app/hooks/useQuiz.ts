@@ -6,17 +6,17 @@ interface UseQuizOptions {
   readonly onQuizComplete?: (score: number, total: number) => void;
 }
 
-interface UseQuizReturn {
+export interface UseQuizReturn {
   readonly state: QuizState;
-  readonly isLoading: boolean;
-  readonly error: string | null;
   readonly currentQuestion: Question | null;
   readonly isAnswerValid: boolean;
-  readonly progress: number;
   readonly canSubmit: boolean;
+  readonly isLoading: boolean;
+  readonly error: string | null;
+  readonly progress: number;
   readonly actions: {
     readonly setUserAnswer: (answer: string) => void;
-    readonly submitAnswer: () => void;
+    readonly submitAnswer: (answer?: string) => void;
     readonly nextQuestion: () => void;
     readonly resetQuiz: () => void;
     readonly completeQuiz: () => void;
@@ -24,33 +24,27 @@ interface UseQuizReturn {
 }
 
 export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizReturn {
-  const [state, setState] = useState<QuizState>({
-    questions: [],
+  const [state, setState] = useState<QuizState>(() => ({
+    questions: [...questions],
     currentQuestionIndex: 0,
     userAnswer: '',
     score: 0,
     isCompleted: false,
     feedback: null,
     isCorrect: false,
-  });
+  }));
 
-  // Update questions when they change
+  // Update questions when they change - only check if state is empty and questions provided
   useEffect(() => {
-    if (questions.length > 0) {
+    if (questions.length > 0 && state.questions.length === 0) {
       setState(prev => ({
         ...prev,
-        questions,
-        currentQuestionIndex: 0,
-        userAnswer: '',
-        score: 0,
-        isCompleted: false,
-        feedback: null,
-        isCorrect: false,
+        questions: [...questions],
       }));
     }
-  }, [questions]);
+  }, [questions, state.questions.length]);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const currentQuestion = state.questions[state.currentQuestionIndex] ?? null;
@@ -111,9 +105,9 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
         break;
       }
       default: {
-        // TypeScript exhaustiveness check
-        const _exhaustive: never = question.type;
-        throw new Error(`Tipo de pregunta no soportado: ${String(_exhaustive)}`);
+        // TypeScript exhaustiveness check - renamed for clarity
+        const _unreachableCase: never = question.type;
+        throw new Error(`Tipo de pregunta no soportado: ${String(_unreachableCase)}`);
       }
     }
 
@@ -132,53 +126,60 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
     }));
   }, []);
 
-  const submitAnswer = useCallback(() => {
-    if (!currentQuestion || !canSubmit) {
-      return;
-    }
-
-    setIsLoading(true);
-    
-    try {
-      const validation = validateAnswer(currentQuestion, state.userAnswer);
+  const submitAnswer = useCallback((answer?: string) => {
+    setState(prev => {
+      const answerToSubmit = answer ?? prev.userAnswer;
+      const current = prev.questions[prev.currentQuestionIndex];
       
-      setState(prev => ({
-        ...prev,
-        feedback: validation.feedback,
-        isCorrect: validation.isCorrect,
-        score: validation.isCorrect ? prev.score + 1 : prev.score,
-      }));
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Error desconocido al validar respuesta';
-      setError(errorMessage);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [currentQuestion, canSubmit, state.userAnswer, validateAnswer]);
+      if (!current || answerToSubmit.trim().length === 0) {
+        return prev;
+      }
+
+      try {
+        const validation = validateAnswer(current, answerToSubmit);
+        
+        return {
+          ...prev,
+          userAnswer: answerToSubmit,
+          feedback: validation.feedback,
+          isCorrect: validation.isCorrect,
+          score: validation.isCorrect ? prev.score + 1 : prev.score,
+        };
+      } catch (err) {
+        // Handle error by setting error state
+        const errorMessage = err instanceof Error ? err.message : 'Error desconocido al validar respuesta';
+        setError(errorMessage);
+        return prev;
+      }
+    });
+  }, [validateAnswer]);
 
   const nextQuestion = useCallback(() => {
-    const isLastQuestion = state.currentQuestionIndex >= state.questions.length - 1;
-    
-    if (isLastQuestion) {
-      setState(prev => ({
-        ...prev,
-        isCompleted: true,
-      }));
-      onQuizComplete?.(state.score + (state.isCorrect ? 1 : 0), state.questions.length);
-    } else {
-      setState(prev => ({
-        ...prev,
-        currentQuestionIndex: prev.currentQuestionIndex + 1,
-        userAnswer: '',
-        feedback: null,
-        isCorrect: false,
-      }));
-    }
-  }, [state.currentQuestionIndex, state.questions.length, state.score, state.isCorrect, onQuizComplete]);
+    setState(prev => {
+      const isLastQuestion = prev.currentQuestionIndex >= prev.questions.length - 1;
+      
+      if (isLastQuestion) {
+        // Call onQuizComplete with the current score
+        onQuizComplete?.(prev.score, prev.questions.length);
+        return {
+          ...prev,
+          isCompleted: true,
+        };
+      } else {
+        return {
+          ...prev,
+          currentQuestionIndex: prev.currentQuestionIndex + 1,
+          userAnswer: '',
+          feedback: null,
+          isCorrect: false,
+        };
+      }
+    });
+  }, [onQuizComplete]);
 
   const resetQuiz = useCallback(() => {
     setState({
-      questions,
+      questions: [...questions],
       currentQuestionIndex: 0,
       userAnswer: '',
       score: 0,
