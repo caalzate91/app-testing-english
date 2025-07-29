@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Question, QuizState, AnswerValidationResult } from '@/app/types';
 
 interface UseQuizOptions {
@@ -25,7 +25,7 @@ interface UseQuizReturn {
 
 export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizReturn {
   const [state, setState] = useState<QuizState>({
-    questions,
+    questions: [],
     currentQuestionIndex: 0,
     userAnswer: '',
     score: 0,
@@ -33,6 +33,22 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
     feedback: null,
     isCorrect: false,
   });
+
+  // Update questions when they change
+  useEffect(() => {
+    if (questions.length > 0) {
+      setState(prev => ({
+        ...prev,
+        questions,
+        currentQuestionIndex: 0,
+        userAnswer: '',
+        score: 0,
+        isCompleted: false,
+        feedback: null,
+        isCorrect: false,
+      }));
+    }
+  }, [questions]);
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -59,9 +75,13 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
         const correctAnswer = question.answer as boolean;
         const userBooleanAnswer = userAnswer.toLowerCase() === 'true';
         isCorrect = userBooleanAnswer === correctAnswer;
-        feedback = isCorrect 
-          ? '¡Correcto! 🎉' 
-          : `Incorrecto. La respuesta correcta es: ${correctAnswer ? 'Verdadero' : 'Falso'}`;
+        
+        if (isCorrect) {
+          feedback = '¡Correcto! 🎉';
+        } else {
+          const correctText = correctAnswer ? 'Verdadero' : 'Falso';
+          feedback = `Incorrecto. La respuesta correcta es: ${correctText}`;
+        }
         break;
       }
       case 'multiple-choice': {
