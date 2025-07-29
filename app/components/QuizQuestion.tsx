@@ -1,4 +1,4 @@
-import { Question } from '../types';
+import { Question } from '@/app/types';
 
 interface QuizQuestionProps {
   readonly question: Question;

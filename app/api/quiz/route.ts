@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { Question } from '@/app/types';
+import { validateQuestions, shuffleArray } from '@/app/lib/utils';
 
-const questions: Question[] = [
+const questions: readonly Question[] = [
   // 5 Multiple Choice
   {
     id: 1,
@@ -106,8 +107,35 @@ const questions: Question[] = [
   },
 ];
 
-export async function GET() {
-  // Shuffle questions to make it more interesting
-  const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
-  return NextResponse.json(shuffledQuestions);
+export async function GET(): Promise<NextResponse<Question[] | { error: string }>> {
+  try {
+    // Validate questions data integrity
+    if (!validateQuestions(questions)) {
+      console.error('Invalid questions data structure detected');
+      return NextResponse.json(
+        { error: 'Invalid questions data structure' },
+        { status: 500 }
+      );
+    }
+
+    // Shuffle questions to make it more interesting
+    const shuffledQuestions = shuffleArray(questions);
+    
+    return NextResponse.json(shuffledQuestions, {
+      status: 200,
+      headers: {
+        'Cache-Control': 'public, max-age=300', // Cache for 5 minutes
+      },
+    });
+  } catch (error) {
+    console.error('Error in quiz API:', error);
+    const errorMessage = error instanceof Error 
+      ? error.message 
+      : 'Error desconocido al procesar las preguntas';
+    
+    return NextResponse.json(
+      { error: errorMessage },
+      { status: 500 }
+    );
+  }
 }
