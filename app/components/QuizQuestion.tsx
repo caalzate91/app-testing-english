@@ -26,14 +26,6 @@ export default function QuizQuestion({
   };
 
   const getButtonContent = () => {
-    if (feedback !== null) {
-      return (
-        <span className="flex items-center justify-center gap-2">
-          <span className="animate-spin">⏳</span>{' '}
-          Procesando...
-        </span>
-      );
-    } 
     if (!isAnswerValid) {
       return (
         <span className="flex items-center justify-center gap-2">
@@ -167,18 +159,21 @@ export default function QuizQuestion({
         
         {/* Submit button */}
         <div className="space-y-4">
-          <button
-            onClick={onSubmit}
-            disabled={!isAnswerValid || feedback !== null}
-            className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 ${
-              isAnswerValid && feedback === null
-                ? 'bg-slate-800 hover:bg-slate-900 active:bg-black text-white shadow-xl hover:shadow-2xl active:shadow-lg focus:ring-slate-300 border-2 border-slate-900'
-                : 'bg-slate-400 dark:bg-slate-600 text-slate-600 dark:text-slate-400 cursor-not-allowed shadow-none border-2 border-slate-500 dark:border-slate-500'
-            }`}
-            aria-label={isAnswerValid ? 'Enviar respuesta' : 'Respuesta requerida para continuar'}
-          >
-            {getButtonContent()}
-          </button>
+          {/* Solo mostrar el botón de envío si no hay feedback */}
+          {feedback === null && (
+            <button
+              onClick={onSubmit}
+              disabled={!isAnswerValid}
+              className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 ${
+                isAnswerValid
+                  ? 'bg-slate-800 hover:bg-slate-900 active:bg-black text-white shadow-xl hover:shadow-2xl active:shadow-lg focus:ring-slate-300 border-2 border-slate-900'
+                  : 'bg-slate-400 dark:bg-slate-600 text-slate-600 dark:text-slate-400 cursor-not-allowed shadow-none border-2 border-slate-500 dark:border-slate-500'
+              }`}
+              aria-label={isAnswerValid ? 'Enviar respuesta' : 'Respuesta requerida para continuar'}
+            >
+              {getButtonContent()}
+            </button>
+          )}
           
           {/* Helper text */}
           {!isAnswerValid && (

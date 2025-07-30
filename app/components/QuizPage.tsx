@@ -141,14 +141,14 @@ export default function QuizPage({
                   isCorrect={quiz.state.isCorrect}
                 />
                 
-                {/* Botón para continuar */}
+                {/* Solo mostrar mensaje informativo sobre la transición automática */}
                 <div className="text-center">
-                  <button
-                    onClick={quiz.actions.nextQuestion}
-                    className="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
-                  >
-                    {quiz.state.currentQuestionIndex >= quiz.state.questions.length - 1 ? 'Ver resultados' : 'Siguiente pregunta'}
-                  </button>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">
+                    {quiz.state.currentQuestionIndex >= quiz.state.questions.length - 1 
+                      ? 'Revisando resultados...' 
+                      : 'Avanzando a la siguiente pregunta...'
+                    }
+                  </p>
                 </div>
               </div>
             )}

@@ -119,9 +119,12 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
   }, []);
 
   const setUserAnswer = useCallback((answer: string) => {
+    // Ensure answer is always a string
+    const sanitizedAnswer = typeof answer === 'string' ? answer : String(answer || '');
+    
     setState(prev => ({
       ...prev,
-      userAnswer: answer,
+      userAnswer: sanitizedAnswer,
       feedback: null,
     }));
   }, []);
@@ -131,19 +134,35 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
       const answerToSubmit = answer ?? prev.userAnswer;
       const current = prev.questions[prev.currentQuestionIndex];
       
-      if (!current || answerToSubmit.trim().length === 0) {
+      // Ensure answerToSubmit is a string and not empty
+      if (!current || typeof answerToSubmit !== 'string' || answerToSubmit.trim().length === 0) {
         return prev;
       }
 
       try {
         const validation = validateAnswer(current, answerToSubmit);
+        const newScore = validation.isCorrect ? prev.score + 1 : prev.score;
+        const isLastQuestion = prev.currentQuestionIndex >= prev.questions.length - 1;
+        
+        // If it's the last question, complete the quiz
+        if (isLastQuestion) {
+          onQuizComplete?.(newScore, prev.questions.length);
+          return {
+            ...prev,
+            userAnswer: answerToSubmit,
+            feedback: validation.feedback,
+            isCorrect: validation.isCorrect,
+            score: newScore,
+            isCompleted: true,
+          };
+        }
         
         return {
           ...prev,
           userAnswer: answerToSubmit,
           feedback: validation.feedback,
           isCorrect: validation.isCorrect,
-          score: validation.isCorrect ? prev.score + 1 : prev.score,
+          score: newScore,
         };
       } catch (err) {
         // Handle error by setting error state
@@ -152,7 +171,28 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
         return prev;
       }
     });
-  }, [validateAnswer]);
+  }, [validateAnswer, onQuizComplete]);
+
+  // Auto-advance to next question after showing feedback
+  useEffect(() => {
+    if (state.feedback && !state.isCompleted) {
+      const isLastQuestion = state.currentQuestionIndex >= state.questions.length - 1;
+      if (!isLastQuestion) {
+        const timer = setTimeout(() => {
+          setState(prev => ({
+            ...prev,
+            currentQuestionIndex: prev.currentQuestionIndex + 1,
+            userAnswer: '',
+            feedback: null,
+            isCorrect: false,
+          }));
+        }, 1500); // Show feedback for 1.5 seconds
+        
+        return () => clearTimeout(timer);
+      }
+    }
+    return undefined;
+  }, [state.feedback, state.isCompleted, state.currentQuestionIndex, state.questions.length]);
 
   const nextQuestion = useCallback(() => {
     setState(prev => {

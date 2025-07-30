@@ -49,6 +49,40 @@ describe('useQuiz Hook', () => {
       expect(result.current.currentQuestion).toBeNull();
     });
 
+    it('should handle non-string answer values without errors', () => {
+      const { result } = renderHook(() =>
+        useQuiz({ questions: mockQuestions, onQuizComplete: mockOnQuizComplete })
+      );
+
+      act(() => {
+        // Test with number value
+        result.current.actions.setUserAnswer(123 as unknown as string);
+      });
+
+      expect(result.current.state.userAnswer).toBe('123');
+
+      act(() => {
+        // Test with boolean value
+        result.current.actions.setUserAnswer(true as unknown as string);
+      });
+
+      expect(result.current.state.userAnswer).toBe('true');
+
+      act(() => {
+        // Test with null value
+        result.current.actions.setUserAnswer(null as unknown as string);
+      });
+
+      expect(result.current.state.userAnswer).toBe('');
+
+      act(() => {
+        // Test with undefined value
+        result.current.actions.setUserAnswer(undefined as unknown as string);
+      });
+
+      expect(result.current.state.userAnswer).toBe('');
+    });
+
     it('should initialize correctly with provided questions', () => {
       const { result } = renderHook(() =>
         useQuiz({ questions: mockQuestions, onQuizComplete: mockOnQuizComplete })
