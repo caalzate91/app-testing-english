@@ -47,10 +47,10 @@ export default function Home(): React.ReactElement {
   // Mostrar loading de lección si está seleccionando
   if (appState === 'quiz' && lessons.isLoadingLesson) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Cargando lección...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-400 mx-auto"></div>
+          <p className="mt-4 text-slate-300">Cargando lección...</p>
         </div>
       </div>
     );
@@ -59,21 +59,21 @@ export default function Home(): React.ReactElement {
   // Mostrar error de lección si hay uno
   if (appState === 'quiz' && lessons.lessonError) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
         <div className="max-w-md mx-auto p-6">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <div className="bg-red-900/20 border border-red-700/50 rounded-lg p-4">
             <div className="flex items-center">
               <svg className="w-5 h-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 className="text-sm font-medium text-red-800">
+              <h3 className="text-sm font-medium text-red-300">
                 Error al cargar la lección
               </h3>
             </div>
-            <p className="mt-2 text-sm text-red-700">{lessons.lessonError}</p>
+            <p className="mt-2 text-sm text-red-200">{lessons.lessonError}</p>
             <button 
               onClick={handleBackToLessons}
-              className="mt-3 text-sm text-red-800 underline hover:text-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
+              className="mt-3 text-sm text-red-300 underline hover:text-red-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
             >
               Volver a lecciones
             </button>

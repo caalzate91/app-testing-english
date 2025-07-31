@@ -61,10 +61,10 @@ export default function QuizQuestion({
                 key={option}
                 type="button"
                 onClick={() => onAnswerChange(option)}
-                className={`quiz-option p-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary-200 cursor-pointer select-none ${
+                className={`quiz-option p-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary-200/50 cursor-pointer select-none ${
                   userAnswer === option
-                    ? 'bg-slate-800 border-slate-900 text-white shadow-xl ring-2 ring-slate-600'
-                    : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
+                    ? 'bg-primary-600 border-primary-500 text-white shadow-xl ring-2 ring-primary-400/50'
+                    : 'bg-dark-700/50 border-dark-600/50 hover:border-primary-500/50 hover:bg-dark-600/60 text-slate-200 shadow-md hover:shadow-lg backdrop-blur-sm'
                 }`}
                 aria-pressed={userAnswer === option}
               >
@@ -82,11 +82,11 @@ export default function QuizQuestion({
               value={userAnswer}
               onChange={(e) => onAnswerChange(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="w-full p-4 text-lg rounded-xl border-2 border-slate-400 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:border-primary-600 focus:ring-4 focus:ring-primary-200 transition-all duration-200 ease-in-out placeholder:text-slate-500 dark:placeholder:text-slate-400 shadow-md focus:shadow-lg"
+              className="w-full p-4 text-lg rounded-xl border-2 border-dark-600/50 bg-dark-700/50 text-slate-100 focus:border-primary-500 focus:ring-4 focus:ring-primary-200/50 transition-all duration-200 ease-in-out placeholder:text-slate-400 shadow-md focus:shadow-lg backdrop-blur-sm"
               placeholder="Escribe tu traducción aquí..."
               aria-label="Campo de respuesta para traducción"
             />
-            <p className="text-sm text-slate-600 dark:text-slate-300">
+            <p className="text-sm text-slate-300">
               💡 Presiona Enter para enviar tu respuesta
             </p>
           </div>
@@ -98,10 +98,10 @@ export default function QuizQuestion({
             <button
               type="button"
               onClick={() => onAnswerChange('true')}
-              className={`quiz-option px-8 py-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-success-200 cursor-pointer select-none ${
+              className={`quiz-option px-8 py-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-success-200/50 cursor-pointer select-none ${
                 userAnswer === 'true'
-                  ? 'bg-slate-800 border-slate-900 text-white shadow-xl ring-2 ring-slate-600'
-                  : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
+                  ? 'bg-success-600 border-success-500 text-white shadow-xl ring-2 ring-success-400/50'
+                  : 'bg-dark-700/50 border-dark-600/50 hover:border-success-500/50 hover:bg-dark-600/60 text-slate-200 shadow-md hover:shadow-lg backdrop-blur-sm'
               }`}
               aria-pressed={userAnswer === 'true'}
             >
@@ -110,10 +110,10 @@ export default function QuizQuestion({
             <button
               type="button"
               onClick={() => onAnswerChange('false')}
-              className={`quiz-option px-8 py-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-danger-200 cursor-pointer select-none ${
+              className={`quiz-option px-8 py-4 rounded-xl border-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-danger-200/50 cursor-pointer select-none ${
                 userAnswer === 'false'
-                  ? 'bg-slate-800 border-slate-900 text-white shadow-xl ring-2 ring-slate-600'
-                  : 'bg-white dark:bg-slate-700 border-slate-400 dark:border-slate-600 hover:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 shadow-md hover:shadow-lg'
+                  ? 'bg-danger-600 border-danger-500 text-white shadow-xl ring-2 ring-danger-400/50'
+                  : 'bg-dark-700/50 border-dark-600/50 hover:border-danger-500/50 hover:bg-dark-600/60 text-slate-200 shadow-md hover:shadow-lg backdrop-blur-sm'
               }`}
               aria-pressed={userAnswer === 'false'}
             >
@@ -130,11 +130,11 @@ export default function QuizQuestion({
               value={userAnswer}
               onChange={(e) => onAnswerChange(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="w-full p-4 text-lg rounded-xl border-2 border-slate-400 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:border-primary-600 focus:ring-4 focus:ring-primary-200 transition-all duration-200 ease-in-out placeholder:text-slate-500 dark:placeholder:text-slate-400 shadow-md focus:shadow-lg"
+              className="w-full p-4 text-lg rounded-xl border-2 border-dark-600/50 bg-dark-700/50 text-slate-100 focus:border-primary-500 focus:ring-4 focus:ring-primary-200/50 transition-all duration-200 ease-in-out placeholder:text-slate-400 shadow-md focus:shadow-lg backdrop-blur-sm"
               placeholder="Completa la oración..."
               aria-label="Campo de respuesta para completar la oración"
             />
-            <p className="text-sm text-slate-600 dark:text-slate-300">
+            <p className="text-sm text-slate-300">
               💡 Presiona Enter para enviar tu respuesta
             </p>
           </div>
@@ -149,12 +149,12 @@ export default function QuizQuestion({
     <div className={`space-y-8 ${className}`}>
       {/* Question */}
       <div className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-600 dark:text-gray-400 text-balance leading-tight">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 text-balance leading-tight">
           {question.question}
         </h2>
         
         {/* Question type indicator */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/50 dark:text-primary-200">
+        <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-900/30 text-primary-300 border border-primary-700/50">
           {question.type === 'multiple-choice' && '📝 Opción múltiple'}
           {question.type === 'translation' && '🔄 Traducción'}
           {question.type === 'true-false' && '⚖️ Verdadero o Falso'}
@@ -175,8 +175,8 @@ export default function QuizQuestion({
               disabled={!isAnswerValid}
               className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 ${
                 isAnswerValid
-                  ? 'bg-slate-800 hover:bg-slate-900 active:bg-black text-white shadow-xl hover:shadow-2xl active:shadow-lg focus:ring-slate-300 border-2 border-slate-900'
-                  : 'bg-slate-400 dark:bg-slate-600 text-slate-600 dark:text-slate-400 cursor-not-allowed shadow-none border-2 border-slate-500 dark:border-slate-500'
+                  ? 'bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white shadow-xl hover:shadow-2xl active:shadow-lg focus:ring-primary-300/50 border-2 border-primary-500'
+                  : 'bg-dark-600/50 text-slate-400 cursor-not-allowed shadow-none border-2 border-dark-500/50'
               }`}
               aria-label={isAnswerValid ? 'Enviar respuesta' : 'Respuesta requerida para continuar'}
             >
@@ -186,7 +186,7 @@ export default function QuizQuestion({
           
           {/* Helper text */}
           {!isAnswerValid && (
-            <p className="text-center text-sm text-slate-600 dark:text-slate-300">
+            <p className="text-center text-sm text-slate-300">
               El botón se habilitará cuando proporciones una respuesta
             </p>
           )}

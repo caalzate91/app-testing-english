@@ -27,10 +27,10 @@ export default function QuizPage({
 
   if (quiz.isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Cargando quiz...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-400 mx-auto"></div>
+          <p className="mt-4 text-slate-300">Cargando quiz...</p>
         </div>
       </div>
     );
@@ -38,28 +38,28 @@ export default function QuizPage({
 
   if (quiz.error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
         <div className="max-w-md mx-auto p-6">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <div className="bg-red-900/20 border border-red-700/50 rounded-lg p-4 backdrop-blur-sm">
             <div className="flex items-center">
               <svg className="w-5 h-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 className="text-sm font-medium text-red-800">
+              <h3 className="text-sm font-medium text-red-300">
                 Error en el quiz
               </h3>
             </div>
-            <p className="mt-2 text-sm text-red-700">{quiz.error}</p>
+            <p className="mt-2 text-sm text-red-200">{quiz.error}</p>
             <div className="mt-4 flex space-x-2">
               <button 
                 onClick={quiz.actions.resetQuiz}
-                className="text-sm text-red-800 underline hover:text-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
+                className="text-sm text-red-300 underline hover:text-red-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
               >
                 Reintentar
               </button>
               <button 
                 onClick={onBackToLessons}
-                className="text-sm text-red-800 underline hover:text-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
+                className="text-sm text-red-300 underline hover:text-red-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
               >
                 Volver a lecciones
               </button>
@@ -71,14 +71,14 @@ export default function QuizPage({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-dark-900">
       {/* Header con navegación */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-dark-800/50 shadow-lg border-b border-dark-700/50 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={onBackToLessons}
-              className="flex items-center text-gray-600 hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+              className="flex items-center text-slate-300 hover:text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-400 rounded"
               aria-label="Volver a lecciones"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,10 +88,10 @@ export default function QuizPage({
             </button>
             
             <div className="text-center">
-              <h1 className="text-lg sm:text-xl font-bold text-gray-900">
+              <h1 className="text-lg sm:text-xl font-bold text-slate-100">
                 {lesson.title}
               </h1>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-slate-300">
                 {lesson.description}
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function QuizPage({
                 
                 {/* Solo mostrar mensaje informativo sobre la transición automática */}
                 <div className="text-center">
-                  <p className="text-sm text-slate-600 dark:text-slate-300">
+                  <p className="text-sm text-slate-400">
                     {quiz.state.currentQuestionIndex >= quiz.state.questions.length - 1 
                       ? 'Revisando resultados...' 
                       : 'Avanzando a la siguiente pregunta...'

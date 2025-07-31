@@ -11,14 +11,14 @@ export default function ProgressBar({ current, total, className = '' }: Progress
   return (
     <div className={`space-y-2 ${className}`}>
       <div className="flex justify-between items-center text-sm font-semibold">
-        <span className="text-gray-700 dark:text-slate-300">
+        <span className="text-slate-200">
           Pregunta {current} de {total}
         </span>
-        <span className="text-slate-800 dark:text-primary-300 bg-slate-100 dark:bg-primary-900/50 px-2 py-1 rounded-full border border-slate-300 dark:border-primary-700">
+        <span className="text-primary-200 bg-primary-900/30 px-2 py-1 rounded-full border border-primary-700/50">
           {percentage}%
         </span>
       </div>
-      <div className="relative h-4 bg-slate-300 dark:bg-slate-600 rounded-full overflow-hidden border-2 border-slate-400 dark:border-slate-500">
+      <div className="relative h-4 bg-dark-700/50 rounded-full overflow-hidden border-2 border-dark-600/50 backdrop-blur-sm">
         <progress 
           className="sr-only"
           value={current}
@@ -26,11 +26,11 @@ export default function ProgressBar({ current, total, className = '' }: Progress
           aria-label={`Progreso del cuestionario: ${current} de ${total} preguntas completadas`}
         />
         <div 
-          className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full transition-all duration-500 ease-out shadow-inner"
+          className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full transition-all duration-500 ease-out shadow-lg"
           style={{ width: progressWidth }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse-soft rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse-soft rounded-full" />
       </div>
     </div>
   );

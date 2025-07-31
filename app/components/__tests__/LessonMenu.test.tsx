@@ -234,15 +234,15 @@ describe('LessonMenu', () => {
         />
       );
 
-      // Check if difficulty badges have appropriate colors
+      // Check if difficulty badges have appropriate colors (dark theme)
       const basicBadge = screen.getByText('Básico');
-      expect(basicBadge).toHaveClass('bg-green-100', 'text-green-800');
+      expect(basicBadge).toHaveClass('bg-green-900/30', 'text-green-300');
 
       const intermediateBadge = screen.getByText('Intermedio');
-      expect(intermediateBadge).toHaveClass('bg-yellow-100', 'text-yellow-800');
+      expect(intermediateBadge).toHaveClass('bg-yellow-900/30', 'text-yellow-300');
 
       const advancedBadge = screen.getByText('Avanzado');
-      expect(advancedBadge).toHaveClass('bg-red-100', 'text-red-800');
+      expect(advancedBadge).toHaveClass('bg-red-900/30', 'text-red-300');
     });
   });
 });
