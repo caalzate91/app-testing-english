@@ -130,17 +130,23 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
   }, []);
 
   const submitAnswer = useCallback((answer?: string) => {
+    // Temporal: log para verificar que se está ejecutando
+    console.warn('submitAnswer function called');
     setState(prev => {
       const answerToSubmit = answer ?? prev.userAnswer;
       const current = prev.questions[prev.currentQuestionIndex];
       
+      console.warn('Processing answer:', answerToSubmit, 'for question:', current?.question);
+      
       // Ensure answerToSubmit is a string and not empty
       if (!current || typeof answerToSubmit !== 'string' || answerToSubmit.trim().length === 0) {
+        console.warn('Early return - invalid answer or question');
         return prev;
       }
 
       try {
         const validation = validateAnswer(current, answerToSubmit);
+        console.warn('Validation result:', validation);
         const newScore = validation.isCorrect ? prev.score + 1 : prev.score;
         const isLastQuestion = prev.currentQuestionIndex >= prev.questions.length - 1;
         
@@ -165,6 +171,7 @@ export function useQuiz({ questions, onQuizComplete }: UseQuizOptions): UseQuizR
           score: newScore,
         };
       } catch (err) {
+        console.error('Error in submitAnswer:', err);
         // Handle error by setting error state
         const errorMessage = err instanceof Error ? err.message : 'Error desconocido al validar respuesta';
         setError(errorMessage);

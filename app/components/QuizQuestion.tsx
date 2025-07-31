@@ -19,9 +19,18 @@ export default function QuizQuestion({
   feedback,
   className = '' 
 }: QuizQuestionProps) {
+  const handleSubmit = () => {
+    // Verificar que onSubmit está definido antes de llamarlo
+    if (typeof onSubmit === 'function') {
+      onSubmit();
+    } else {
+      console.error('onSubmit is not a function:', onSubmit);
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && isAnswerValid) {
-      onSubmit();
+      handleSubmit();
     }
   };
 
@@ -162,7 +171,7 @@ export default function QuizQuestion({
           {/* Solo mostrar el botón de envío si no hay feedback */}
           {feedback === null && (
             <button
-              onClick={onSubmit}
+              onClick={handleSubmit}
               disabled={!isAnswerValid}
               className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-4 ${
                 isAnswerValid
