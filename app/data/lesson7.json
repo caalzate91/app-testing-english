@@ -1,0 +1,105 @@
+{
+  "id": 7,
+  "title": "Unit 7: Going Away - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre viajes, equipaje y consejos de viaje",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What do you need to travel to another country?",
+      "options": ["Sleeping bag", "Passport", "Flashlight", "First-aid kit"],
+      "answer": "Passport"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: 'No olvides empacar protector solar.'",
+      "answer": "Don't forget to pack sunscreen"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "It's important _____ get a visa before traveling.",
+      "answer": "to"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When someone suggests something you like, you can say:",
+      "options": ["I don't know. Maybe", "That's a great idea", "I guess we could, but...", "I'd like to, but..."],
+      "answer": "That's a great idea"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "A bathing suit is something you wear when swimming.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: '¿Por qué no buscas un vuelo barato en línea?'",
+      "answer": "Why don't you go online to find a cheap flight?"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'go backpacking' mean?",
+      "options": ["To travel with only a backpack", "To walk backwards", "To pack a bag", "To go shopping"],
+      "answer": "To travel with only a backpack"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "You should probably _____ some research before your trip.",
+      "answer": "do"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Me estoy divirtiendo mucho aquí en París.'",
+      "answer": "I'm having a great time here in Paris"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "Toiletries include items like shampoo, soap, and toothpaste.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "What should you take on a camping trip?",
+      "options": ["Credit card", "Tent", "Headphones", "Makeup"],
+      "answer": "Tent"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: 'Deberías cambiar dinero antes del viaje.'",
+      "answer": "You should change money before the trip"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "Maybe you should _____ a few days off for your vacation.",
+      "answer": "take"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "When you don't like a suggestion, you can say:",
+      "options": ["Definitely", "That sounds like fun", "I'd like to, but...", "I'd love to"],
+      "answer": "I'd like to, but..."
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Es fácil encontrar una ganga si buscas bien.'",
+      "answer": "It's easy to find a bargain if you look carefully"
+    }
+  ]
+}

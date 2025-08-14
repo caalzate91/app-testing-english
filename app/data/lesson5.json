@@ -1,0 +1,105 @@
+{
+  "id": 5,
+  "title": "Unit 5: Growing Up - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre la infancia, educación y experiencias del pasado",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "Which subject involves studying numbers and calculations?",
+      "options": ["Literature", "Mathematics", "Geography", "Drama"],
+      "answer": "Mathematics"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Dónde naciste?'",
+      "answer": "Where were you born?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "I lived there _____ six years.",
+      "answer": "for"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When you want to correct something you said, you can say:",
+      "options": ["Huh", "Actually, no...", "Where were you born?", "I was born in"],
+      "answer": "Actually, no..."
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "Physical education (P.E.) is a school subject about sports and exercise.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Viví allí durante mucho tiempo.'",
+      "answer": "I lived there for a long time"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'get into trouble' mean?",
+      "options": ["To do something wrong and face consequences", "To enter a building", "To become successful", "To make new friends"],
+      "answer": "To do something wrong and face consequences"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "Most _____ the students in my class were bilingual.",
+      "answer": "of"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Me especialicé en biología.'",
+      "answer": "I majored in biology"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "The year 2007 is pronounced 'two thousand and seven'.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Which expression shows you're interested in what someone is saying?",
+      "options": ["Actually, no", "I mean", "Huh", "Well, actually"],
+      "answer": "Huh"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: 'Dejé la escuela hace tres años.'",
+      "answer": "I quit school three years ago"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "I studied there _____ 1994 to 2011.",
+      "answer": "from"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "What is the past form of 'are'?",
+      "options": ["was", "were", "been", "being"],
+      "answer": "were"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: '¿Te llevabas bien con tus compañeros de clase?'",
+      "answer": "Did you get along with your classmates?"
+    }
+  ]
+}

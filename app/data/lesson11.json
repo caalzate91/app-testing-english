@@ -1,0 +1,105 @@
+{
+  "id": 11,
+  "title": "Unit 11: Appearances - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre apariencia física, moda y descripción de personas",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What do you call hair that is shaped into circles?",
+      "options": ["Straight hair", "Curly hair", "Spiked hair", "Short hair"],
+      "answer": "Curly hair"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Cómo se ve tu hermana?'",
+      "answer": "What does your sister look like?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "He's got _____ hair and he's very tall.",
+      "answer": "blond"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When you want to identify someone in a group, you might say:",
+      "options": ["What do you call it?", "He's the one in the yellow pants", "Short hair is in", "Do you mean cargo pants?"],
+      "answer": "He's the one in the yellow pants"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "Identical twins look exactly the same.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Tiene barba y bigote.'",
+      "answer": "He has a beard and mustache"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'She's six foot three' tell you about someone?",
+      "options": ["Her age", "Her height", "Her weight", "Her hair color"],
+      "answer": "Her height"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "Big glasses are out _____ style these days.",
+      "answer": "of"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Los jeans ajustados están de moda.'",
+      "answer": "Skinny jeans are in fashion"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "Braces are something you wear on your teeth.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Which describes someone who has no hair on their head?",
+      "options": ["Muscular", "Bald", "Skinny", "Fashionable"],
+      "answer": "Bald"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: '¿Se parecen ustedes?'",
+      "answer": "Do you look alike?"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "She takes _____ her mother. They have the same eyes.",
+      "answer": "after"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "When you can't remember the name of something, you might say:",
+      "options": ["It's the in thing", "What do you call it?", "She's six foot three", "No, we look totally different"],
+      "answer": "What do you call it?"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Lleva el cabello en cola de caballo.'",
+      "answer": "She wears her hair in a ponytail"
+    }
+  ]
+}

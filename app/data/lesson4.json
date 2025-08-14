@@ -1,0 +1,105 @@
+{
+  "id": 4,
+  "title": "Unit 4: Celebrations - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre celebraciones, fechas y eventos especiales",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What do you call the woman who is getting married?",
+      "options": ["The groom", "The bride", "The relative", "The lawyer"],
+      "answer": "The bride"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Qué vas a hacer en Año Nuevo?'",
+      "answer": "What are you doing for New Year's Eve?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "My birthday's _____ May 10th.",
+      "answer": "on"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When someone says 'It depends', they mean:",
+      "options": ["They are sure about something", "It varies based on the situation", "They completely disagree", "They know the exact answer"],
+      "answer": "It varies based on the situation"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "Halloween is celebrated by going trick-or-treating and wearing costumes.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Vamos a celebrar nuestro aniversario de bodas.'",
+      "answer": "We're going to celebrate our wedding anniversary"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What do you do at a birthday party with candles?",
+      "options": ["Exchange rings", "Blow out candles", "Wear a cap and gown", "Send a card"],
+      "answer": "Blow out candles"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "She's going to _____ 50 next month.",
+      "answer": "be"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Me gradué de la facultad de derecho.'",
+      "answer": "I graduated from law school"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "Valentine's Day is celebrated in February.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "What do people typically do on Mother's Day?",
+      "options": ["Go trick-or-treating", "Give something special to their mothers", "Wear costumes", "Exchange rings"],
+      "answer": "Give something special to their mothers"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: 'No voy a hacer nada especial.'",
+      "answer": "I'm not going to do anything special"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "What are you going to _____ tonight?",
+      "answer": "do"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "How do you properly end a personal note?",
+      "options": ["See you later", "Best wishes, [name]", "Call me back", "What is it exactly?"],
+      "answer": "Best wishes, [name]"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Va a ser divertido.'",
+      "answer": "It's going to be fun"
+    }
+  ]
+}

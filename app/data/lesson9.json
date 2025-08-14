@@ -1,0 +1,105 @@
+{
+  "id": 9,
+  "title": "Unit 9: Things Happen - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre accidentes, lesiones y eventos inesperados",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What part of your body connects your hand to your arm?",
+      "options": ["Ankle", "Wrist", "Elbow", "Shoulder"],
+      "answer": "Wrist"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: 'Me lastimé cuando me caí.'",
+      "answer": "I hurt myself when I fell"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "I was driving _____ something went wrong.",
+      "answer": "when"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When someone tells you about an embarrassing accident, you might say:",
+      "options": ["That's hilarious", "How embarrassing!", "That's awful", "Thank goodness"],
+      "answer": "How embarrassing!"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "A sprained ankle is an injury to your foot.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Derramé café en mi camisa.'",
+      "answer": "I spilled coffee on my shirt"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'I wasn't paying attention' mean?",
+      "options": ["I was very focused", "I was distracted", "I was sleeping", "I was angry"],
+      "answer": "I was distracted"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "I was working _____ myself when the accident happened.",
+      "answer": "by"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Me rompí el brazo jugando fútbol.'",
+      "answer": "I broke my arm playing soccer"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "Reflexive pronouns like 'myself' and 'yourself' refer back to the subject.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Which body part is between your head and your shoulders?",
+      "options": ["Chest", "Back", "Neck", "Hip"],
+      "answer": "Neck"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: '¿Cómo pasó? ¿Qué estabas haciendo?'",
+      "answer": "How did it happen? What were you doing?"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "I was so _____! Everyone was looking at me.",
+      "answer": "embarrassed"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "When you want to show sympathy for someone's bad experience, you say:",
+      "options": ["That's hilarious", "That's awful", "I bet no one noticed", "How about yourself?"],
+      "answer": "That's awful"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Eliminé mis archivos de música por accidente.'",
+      "answer": "I deleted my music files by accident"
+    }
+  ]
+}

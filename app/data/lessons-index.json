@@ -8,6 +8,96 @@
       "questionsCount": 15,
       "difficulty": "beginner",
       "tags": ["conversation", "introductions", "social"]
+    },
+    {
+      "id": 2,
+      "title": "Interests",
+      "description": "Test de vocabulario y expresiones conversacionales sobre hobbies, deportes y tiempo libre",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["hobbies", "sports", "free time", "interests"]
+    },
+    {
+      "id": 3,
+      "title": "Health",
+      "description": "Test de vocabulario y expresiones conversacionales sobre salud, alimentación y ejercicio",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["health", "food", "exercise", "wellness"]
+    },
+    {
+      "id": 4,
+      "title": "Celebrations",
+      "description": "Test de vocabulario y expresiones conversacionales sobre celebraciones, fechas y eventos especiales",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["celebrations", "holidays", "dates", "events"]
+    },
+    {
+      "id": 5,
+      "title": "Growing Up",
+      "description": "Test de vocabulario y expresiones conversacionales sobre la infancia, educación y experiencias del pasado",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["childhood", "education", "past experiences", "school subjects"]
+    },
+    {
+      "id": 6,
+      "title": "Around Town",
+      "description": "Test de vocabulario y expresiones conversacionales sobre lugares en la ciudad, direcciones y ubicaciones",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["directions", "city places", "locations", "navigation"]
+    },
+    {
+      "id": 7,
+      "title": "Going Away",
+      "description": "Test de vocabulario y expresiones conversacionales sobre viajes, equipaje y consejos de viaje",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["travel", "packing", "advice", "vacation"]
+    },
+    {
+      "id": 8,
+      "title": "At Home",
+      "description": "Test de vocabulario y expresiones conversacionales sobre el hogar, muebles y actividades domésticas",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["home", "furniture", "household", "domestic activities"]
+    },
+    {
+      "id": 9,
+      "title": "Things Happen",
+      "description": "Test de vocabulario y expresiones conversacionales sobre accidentes, lesiones y eventos inesperados",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["accidents", "injuries", "body parts", "storytelling"]
+    },
+    {
+      "id": 10,
+      "title": "Communication",
+      "description": "Test de vocabulario y expresiones conversacionales sobre comunicación, tecnología y conversaciones telefónicas",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["communication", "technology", "phone calls", "comparisons"]
+    },
+    {
+      "id": 11,
+      "title": "Appearances",
+      "description": "Test de vocabulario y expresiones conversacionales sobre apariencia física, moda y descripción de personas",
+      "level": "A2",
+      "questionsCount": 15,
+      "difficulty": "beginner",
+      "tags": ["appearance", "fashion", "physical description", "clothing"]
     }
   ]
 }
