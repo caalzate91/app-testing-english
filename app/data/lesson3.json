@@ -1,0 +1,105 @@
+{
+  "id": 3,
+  "title": "Unit 3: Health - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre salud, alimentación y ejercicio",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What do you call food that is not good for your health?",
+      "options": ["Balanced diet", "Junk food", "Diet drink", "Honey"],
+      "answer": "Junk food"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Cómo te sientes?'",
+      "answer": "How are you feeling?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "I sleep _____ least seven hours a night.",
+      "answer": "at"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "Which expression shows surprise?",
+      "options": ["I hope you feel better", "You're kidding!", "I'm trying to lose weight", "That's good"],
+      "answer": "You're kidding!"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "A nightmare is a pleasant dream.",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Tengo dolor de garganta.'",
+      "answer": "I have a sore throat"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'I'm trying to lose weight' mean?",
+      "options": ["I want to gain weight", "I want to become thinner", "I'm eating more food", "I don't care about my weight"],
+      "answer": "I want to become thinner"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "I generally go to the gym _____ other day.",
+      "answer": "every"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Me siento muy estresado.'",
+      "answer": "I feel very stressed"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "Meditation is a relaxation technique.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "When someone has a cold, you can say:",
+      "options": ["You're kidding!", "I hope you feel better", "Are you serious?", "That's good"],
+      "answer": "I hope you feel better"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: 'Hago ejercicio seis días a la semana.'",
+      "answer": "I exercise six days a week"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "I eat plenty _____ fruit and vegetables.",
+      "answer": "of"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "What should you do if you have a bad cough?",
+      "options": ["Go running", "Suck on a cough drop", "Eat fast food", "Stay up late"],
+      "answer": "Suck on a cough drop"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Duermo al menos siete horas por noche.'",
+      "answer": "I sleep at least seven hours a night"
+    }
+  ]
+}

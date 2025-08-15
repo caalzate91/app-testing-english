@@ -1,0 +1,105 @@
+{
+  "id": 2,
+  "title": "Unit 2: Interests - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre hobbies, deportes y tiempo libre",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What do you call someone who creates pictures with a camera?",
+      "options": ["A photographer", "A painter", "A musician", "A writer"],
+      "answer": "A photographer"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: 'Me gusta tocar el piano en mi tiempo libre.'",
+      "answer": "I like to play the piano in my free time"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "I'm really good _____ drawing people.",
+      "answer": "at"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice", 
+      "question": "Which phrase means you don't like something very much?",
+      "options": ["I love it", "I'm not really into it", "I'm excited about it", "I enjoy it"],
+      "answer": "I'm not really into it"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "Jazz, rock, and classical are all types of music.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: '¿Eres bueno tocando la guitarra?'",
+      "answer": "Are you good at playing the guitar?"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'I'd like to take a look sometime' mean?",
+      "options": ["I want to buy something", "I want to see something in the future", "I don't want to see it", "I already saw it"],
+      "answer": "I want to see something in the future"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "What kind _____ music do you like?",
+      "answer": "of"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Colecciono osos de peluche.'",
+      "answer": "I collect teddy bears"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "Hiking and skiing are indoor activities.",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Which hobby involves making things with your hands?",
+      "options": ["Reading online forums", "Making jewelry", "Watching concerts", "Listening to hip-hop"],
+      "answer": "Making jewelry"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: 'No tengo mucho tiempo para hobbies.'",
+      "answer": "I don't really have much time for hobbies"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "Are you _____ photography? Yes, I love taking pictures!",
+      "answer": "into"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "What's a polite way to say you can't do something well?",
+      "options": ["I hate it", "Not very well", "I'm the best", "I never do it"],
+      "answer": "Not very well"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Me encanta escribir poesía.'",
+      "answer": "I love writing poetry"
+    }
+  ]
+}

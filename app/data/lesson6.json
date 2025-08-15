@@ -1,0 +1,105 @@
+{
+  "id": 6,
+  "title": "Unit 6: Around Town - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre lugares en la ciudad, direcciones y ubicaciones",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "Where would you go to get cash?",
+      "options": ["Aquarium", "ATM", "Museum", "Stadium"],
+      "answer": "ATM"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Puedes decirme cómo llegar al museo?'",
+      "answer": "Can you tell me how to get to the museum?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "The bank is _____ the corner of Main and First Street.",
+      "answer": "on"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When giving directions, 'Go straight ahead' means:",
+      "options": ["Turn left", "Continue in the same direction", "Go back", "Turn right"],
+      "answer": "Continue in the same direction"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "A drugstore is a place where you can buy medicine.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: '¿Está lejos de aquí?'",
+      "answer": "Is it far from here?"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What do you say when you want to check if you heard correctly?",
+      "options": ["You can't miss it", "Did you say...?", "It's right there", "Go straight ahead"],
+      "answer": "Did you say...?"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "Is there a bank _____ here? Yes, there's one on Main Street.",
+      "answer": "around"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Gira a la derecha en la próxima esquina.'",
+      "answer": "Turn right at the next corner"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "'It's within walking distance' means the place is very far away.",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Where would you buy shoes?",
+      "options": ["Electronics store", "Shoe store", "Jewelry store", "Furniture store"],
+      "answer": "Shoe store"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: '¿Hay alguna tienda de conveniencia por aquí?'",
+      "answer": "Is there a convenience store around here?"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "The parking garage is _____ front of the department store.",
+      "answer": "in"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "When offering help to someone who looks lost, you can say:",
+      "options": ["Go straight ahead", "You can't miss it", "Can I help you?", "It's right there"],
+      "answer": "Can I help you?"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Continúa hacia el este por esta calle.'",
+      "answer": "Continue east on this street"
+    }
+  ]
+}

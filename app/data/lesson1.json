@@ -1,0 +1,105 @@
+{
+  "id": 1,
+  "title": "Unit 1: Making Friends - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre conocer gente nueva y hacer amigos",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What do you call someone who really enjoys listening to others?",
+      "options": ["A talker", "A listener", "A stranger", "An animal lover"],
+      "answer": "A listener"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Tienes algún apodo?'",
+      "answer": "Do you have a nickname?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "I'm not a morning person. I'm not _____.",
+      "answer": "either"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "Which expression shows surprise or interest?",
+      "options": ["By the way", "Oh, really?", "But that's about it", "Me neither"],
+      "answer": "Oh, really?"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "A 'full-time student' studies part of the day only.",
+      "options": ["True", "False"],
+      "answer": "False"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Soy alérgico a los gatos.'",
+      "answer": "I'm allergic to cats"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'By the way' help you do in conversation?",
+      "options": ["End the conversation", "Change the topic", "Show disagreement", "Ask for help"],
+      "answer": "Change the topic"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "How long does it _____ to get to work? It takes an hour.",
+      "answer": "take"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'No puedo soportar el clima frío.'",
+      "answer": "I can't stand cold weather"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "When someone says 'I watch pro football' and you respond 'I do too', you are showing similarity.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Which is a good conversation starter in a crowded place?",
+      "options": ["What's your salary?", "Boy, there are a lot of people out here tonight", "I don't like you", "Where do you live exactly?"],
+      "answer": "Boy, there are a lot of people out here tonight"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: '¿Haces amigos en línea?'",
+      "answer": "Do you make friends online?"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "What do you do _____ a living?",
+      "answer": "for"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "If someone is 'talkative', they:",
+      "options": ["Don't speak much", "Love to talk a lot", "Only listen", "Are always nervous"],
+      "answer": "Love to talk a lot"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Voy al mismo colegio que él.'",
+      "answer": "I go to the same college as him"
+    }
+  ]
+}

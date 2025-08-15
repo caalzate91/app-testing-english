@@ -1,0 +1,160 @@
+import { Lesson } from '@/app/types';
+import { useQuiz } from '@/app/hooks/useQuiz';
+import ProgressBar from './ProgressBar';
+import QuizQuestion from './QuizQuestion';
+import QuizResult from './QuizResult';
+import Feedback from './Feedback';
+
+interface QuizPageProps {
+  readonly lesson: Lesson;
+  readonly onBackToLessons: () => void;
+  readonly onQuizComplete?: (score: number, total: number) => void;
+}
+
+/**
+ * Componente que maneja la presentación y flujo de un quiz específico
+ * Incluye navegación, progreso y resultados
+ */
+export default function QuizPage({ 
+  lesson, 
+  onBackToLessons, 
+  onQuizComplete 
+}: QuizPageProps): React.ReactElement {
+  const quiz = useQuiz({
+    questions: lesson.questions,
+    onQuizComplete: onQuizComplete || (() => {}),
+  });
+
+  if (quiz.isLoading) {
+    return (
+      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-400 mx-auto"></div>
+          <p className="mt-4 text-slate-300">Cargando quiz...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (quiz.error) {
+    return (
+      <div className="min-h-screen bg-dark-900 flex items-center justify-center">
+        <div className="max-w-md mx-auto p-6">
+          <div className="bg-red-900/20 border border-red-700/50 rounded-lg p-4 backdrop-blur-sm">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 className="text-sm font-medium text-red-300">
+                Error en el quiz
+              </h3>
+            </div>
+            <p className="mt-2 text-sm text-red-200">{quiz.error}</p>
+            <div className="mt-4 flex space-x-2">
+              <button 
+                onClick={quiz.actions.resetQuiz}
+                className="text-sm text-red-300 underline hover:text-red-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
+              >
+                Reintentar
+              </button>
+              <button 
+                onClick={onBackToLessons}
+                className="text-sm text-red-300 underline hover:text-red-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded"
+              >
+                Volver a lecciones
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-dark-900">
+      {/* Header con navegación */}
+      <header className="bg-dark-800/50 shadow-lg border-b border-dark-700/50 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={onBackToLessons}
+              className="flex items-center text-slate-300 hover:text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-400 rounded"
+              aria-label="Volver a lecciones"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              <span className="text-sm font-medium">Volver a lecciones</span>
+            </button>
+            
+            <div className="text-center">
+              <h1 className="text-lg sm:text-xl font-bold text-slate-100">
+                {lesson.title}
+              </h1>
+              <p className="text-sm text-slate-300">
+                {lesson.description}
+              </p>
+            </div>
+            
+            <div className="w-24"></div> {/* Spacer para centrar el título */}
+          </div>
+        </div>
+      </header>
+
+      {/* Contenido principal */}
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Barra de progreso */}
+        <div className="mb-6">
+          <ProgressBar 
+            current={quiz.state.currentQuestionIndex + 1}
+            total={quiz.state.questions.length}
+          />
+        </div>
+
+        {/* Quiz completado */}
+        {quiz.state.isCompleted ? (
+          <QuizResult
+            correctAnswers={quiz.state.score}
+            totalQuestions={quiz.state.questions.length}
+            onRestart={quiz.actions.resetQuiz}
+          />
+        ) : (
+          /* Quiz activo */
+          <div className="space-y-6">
+            {/* Pregunta actual */}
+            {quiz.currentQuestion && (
+              <QuizQuestion
+                question={quiz.currentQuestion}
+                userAnswer={quiz.state.userAnswer}
+                onAnswerChange={quiz.actions.setUserAnswer}
+                onSubmit={quiz.actions.submitAnswer}
+                isAnswerValid={quiz.isAnswerValid}
+                feedback={quiz.state.feedback}
+              />
+            )}
+
+            {/* Feedback */}
+            {quiz.state.feedback && (
+              <div className="space-y-4">
+                <Feedback
+                  message={quiz.state.feedback}
+                  isCorrect={quiz.state.isCorrect}
+                />
+                
+                {/* Solo mostrar mensaje informativo sobre la transición automática */}
+                <div className="text-center">
+                  <p className="text-sm text-slate-400">
+                    {quiz.state.currentQuestionIndex >= quiz.state.questions.length - 1 
+                      ? 'Revisando resultados...' 
+                      : 'Avanzando a la siguiente pregunta...'
+                    }
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </main>
+    </div>
+  );
+}

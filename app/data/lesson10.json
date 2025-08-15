@@ -1,0 +1,105 @@
+{
+  "id": 10,
+  "title": "Unit 10: Communication - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre comunicación, tecnología y conversaciones telefónicas",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What do you use to power your phone when the battery is low?",
+      "options": ["Spam", "Charger", "Voice mail", "Inbox"],
+      "answer": "Charger"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Podría hablar con Angela, por favor?'",
+      "answer": "Could I speak to Angela, please?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "Video calling is _____ convenient than regular mail.",
+      "answer": "more"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When you want to politely interrupt a conversation, you can say:",
+      "options": ["Guess what!", "Just a minute", "Finally!", "Of course"],
+      "answer": "Just a minute"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "Instant messaging (IM) is faster than regular mail.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Te llamaré más tarde, ¿está bien?'",
+      "answer": "Call me later, OK?"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'You're breaking up' mean during a phone call?",
+      "options": ["You're ending the relationship", "The audio quality is poor", "You're very emotional", "You're speaking too fast"],
+      "answer": "The audio quality is poor"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "What were we talking _____? I forgot.",
+      "answer": "about"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: 'Es difícil contactarte.'",
+      "answer": "It's hard to get ahold of you"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "Spam refers to unwanted electronic messages.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Which expression shows surprise about something good happening?",
+      "options": ["Hold on a second", "There's nothing worse than", "Finally!", "However"],
+      "answer": "Finally!"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: 'Enviamos mensajes de texto para mantenernos en contacto.'",
+      "answer": "We text to keep in touch"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "I was _____ calling to ask about the meeting.",
+      "answer": "just"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "When you want to give your opinion in formal writing, you start with:",
+      "options": ["Guess what!", "Are you kidding?", "In my opinion", "Just a second"],
+      "answer": "In my opinion"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: 'Las videoconferencias son más eficientes que las llamadas regulares.'",
+      "answer": "Video conferencing is more efficient than regular calls"
+    }
+  ]
+}

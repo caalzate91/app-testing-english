@@ -1,0 +1,105 @@
+{
+  "id": 8,
+  "title": "Unit 8: At Home - Comprehensive Test",
+  "description": "Test de vocabulario y expresiones conversacionales sobre el hogar, muebles y actividades domésticas",
+  "level": "A2",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "Where do you usually take a bath?",
+      "options": ["In the kitchen", "In the bathtub", "In the living room", "In the closet"],
+      "answer": "In the bathtub"
+    },
+    {
+      "id": 2,
+      "type": "translation",
+      "question": "Traduce: '¿Puedo tomar prestado el tuyo?'",
+      "answer": "Can I borrow yours?"
+    },
+    {
+      "id": 3,
+      "type": "fill-in-the-blank",
+      "question": "The books are _____ top of the dresser.",
+      "answer": "on"
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "When someone asks 'Would you mind helping me?', a positive response is:",
+      "options": ["Yes, I mind", "No problem", "I hate to help", "Go away"],
+      "answer": "No problem"
+    },
+    {
+      "id": 5,
+      "type": "true-false",
+      "question": "A nightstand is a piece of furniture usually found in the bedroom.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 6,
+      "type": "translation",
+      "question": "Traduce: 'Necesito cargar mi teléfono.'",
+      "answer": "I need to charge my phone"
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "question": "What does 'Make yourself at home' mean?",
+      "options": ["Build a house", "Feel comfortable and relaxed", "Clean the house", "Leave immediately"],
+      "answer": "Feel comfortable and relaxed"
+    },
+    {
+      "id": 8,
+      "type": "fill-in-the-blank",
+      "question": "First, I'll set the table. _____, I'll turn on the oven.",
+      "answer": "Next"
+    },
+    {
+      "id": 9,
+      "type": "translation",
+      "question": "Traduce: '¿Podrías cortar las cebollas?'",
+      "answer": "Could you chop the onions?"
+    },
+    {
+      "id": 10,
+      "type": "true-false",
+      "question": "A microwave oven is used for heating food quickly.",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "question": "Which material is often used to make comfortable furniture?",
+      "options": ["Metal", "Plastic", "Leather", "Glass"],
+      "answer": "Leather"
+    },
+    {
+      "id": 12,
+      "type": "translation",
+      "question": "Traduce: 'Doy mi ropa vieja a la caridad.'",
+      "answer": "I give my old clothes to charity"
+    },
+    {
+      "id": 13,
+      "type": "fill-in-the-blank",
+      "question": "I watch TV _____ I'm eating dinner.",
+      "answer": "while"
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "question": "When you welcome someone into your home, you might say:",
+      "options": ["Go away", "Come on in", "Stay outside", "I'm running late"],
+      "answer": "Come on in"
+    },
+    {
+      "id": 15,
+      "type": "translation",
+      "question": "Traduce: '¿De quién es esta toalla?'",
+      "answer": "Whose towel is this?"
+    }
+  ]
+}
