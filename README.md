@@ -115,7 +115,43 @@ npm run build
 
 # Inicio
 npm start
+
+# Testing
+npm test
+npm run test:coverage
+
+# Quality Check (lint + build + test with coverage)
+npm run check
 ```
+
+### 🤖 AI Integration - Vertex AI Gemini
+
+The project includes an **AI-powered Q&A adapter** using Google's Vertex AI Gemini 2.5 Flash model:
+
+- **Grounded Responses**: Answers based on actual lesson JSON data
+- **Decoupled Architecture**: Clean port/adapter pattern for easy testing and mocking
+- **87.5% Test Coverage**: Comprehensive unit and integration tests
+- **Feature Flag Support**: Optional integration via environment variable
+
+#### Quick Start
+
+1. Get an API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create `.env.local` file:
+   ```bash
+   GEMINI_API_KEY=your_api_key_here
+   USE_VERTEX_AI=true
+   ```
+3. Use the adapter:
+   ```typescript
+   import { VertexGeminiClient, JsonRepository } from '@/app/adapters/vertex-gemini';
+   
+   const client = new VertexGeminiClient();
+   const lesson = await JsonRepository.loadLesson(1);
+   const contextDocs = JsonRepository.lessonToContextDocuments(lesson);
+   const response = await client.qaFromJson(contextDocs, "What is a listener?");
+   ```
+
+📖 **Full Documentation**: See [VERTEX_AI_ADAPTER.md](./VERTEX_AI_ADAPTER.md) for complete setup, usage, and API reference.
 
 ### 📱 Compatibilidad
 
