@@ -263,6 +263,7 @@ describe('VertexGeminiClient', () => {
 
   describe('error handling', () => {
     it('should handle SDK errors gracefully', async () => {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const { GoogleGenerativeAI } = require('@google/generative-ai');
       GoogleGenerativeAI.mockImplementationOnce(() => {
         return {
@@ -281,6 +282,7 @@ describe('VertexGeminiClient', () => {
     });
 
     it('should handle empty response from SDK', async () => {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const { GoogleGenerativeAI } = require('@google/generative-ai');
       GoogleGenerativeAI.mockImplementationOnce(() => {
         return {

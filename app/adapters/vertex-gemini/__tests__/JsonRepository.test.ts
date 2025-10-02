@@ -3,7 +3,7 @@
  */
 
 import { JsonRepository } from '../JsonRepository';
-import { Lesson, Question } from '../../../types';
+import { Lesson } from '../../../types';
 
 describe('JsonRepository', () => {
   describe('loadLesson', () => {
